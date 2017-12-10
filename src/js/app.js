@@ -5,4 +5,4 @@ import '../css/style.css';
 
 import Toogle from './basic/Toogle';
 
-render(<Toogle />, document.getElementById('app'));
+render(<Toogle onToogle={on => console.log(on)}/>, document.getElementById('app'));
