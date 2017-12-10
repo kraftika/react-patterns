@@ -4,7 +4,7 @@ import Switch from './Switch';
 class Toogle extends Component {
     static defaultProps = {onToogle: () => {}};
     state = {
-        on: false
+        on: this.props.defaultOn
     }
 
     toogle = () => {
@@ -16,7 +16,7 @@ class Toogle extends Component {
     }
 
     render() {
-        return this.props.renderSwitch({
+        return this.props.render({
             on: this.state.on,
             onToogle: this.toogle
         });

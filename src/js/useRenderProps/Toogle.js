@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Switch from './Switch';
 
 class Toogle extends Component {
     static defaultProps = {onToogle: () => {}};
@@ -16,10 +15,10 @@ class Toogle extends Component {
     }
 
     render() {
-        const {on} = this.state;
-        return (
-            <Switch on={on} onClick={this.toogle} /> 
-        )
+        return this.props.render({
+            on: this.state.on,
+            onToogle: this.toogle
+        })
     }
 }
 
