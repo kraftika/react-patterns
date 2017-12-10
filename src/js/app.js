@@ -3,18 +3,21 @@ import { render } from 'react-dom';
 
 import '../css/style.css';
 
-import Toogle from './useRenderProps/Toogle';
-import Switch from './useRenderProps/Switch';
+import Toogle from './useComponentStateInitializer/Toogle';
+import Switch from './useComponentStateInitializer/Switch';
 
-const renderSwitch = ({on, onToogle}) => {
+const renderSwitch = ({on, onToogle, onReset}) => {
     return (
         <div>
-            <Switch on={on} onClick={onToogle} /> 
+            <Switch on={on} 
+                    onClick={onToogle} 
+                    /> 
             <div>{ on ? 'On' : 'Off' }</div>
+            <button onClick={onReset}>Reset</button>
         </div>
         
     )
 }
 
-render(<Toogle render={renderSwitch}/>, 
+render(<Toogle render={renderSwitch} defaultOn={true}/>, 
             document.getElementById('app'));

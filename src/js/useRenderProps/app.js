@@ -3,6 +3,18 @@ import { render } from 'react-dom';
 
 import '../css/style.css';
 
-import Toogle from './compoundComponents/Toogle';
+import Toogle from './useRenderProps/Toogle';
+import Switch from './useRenderProps/Switch';
 
-render(<Toogle onToogle={on => console.log(on)}/>, document.getElementById('app'));
+const renderSwitch = ({on, onToogle}) => {
+    return (
+        <div>
+            <Switch on={on} onClick={onToogle} /> 
+            <div>{ on ? 'On' : 'Off' }</div>
+        </div>
+        
+    )
+}
+
+render(<Toogle render={renderSwitch}/>, 
+            document.getElementById('app'));
