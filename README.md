@@ -1,7 +1,6 @@
-# react-scaf
+# Contains the following patterns
 
-Grab the files if you need React project fast. It contains
-
-### Webpack
-### Babel
-### React
+## Compound components
+## Component state initializer
+## Component props collection
+## Renders props 
